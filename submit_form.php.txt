@@ -1,0 +1,16 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $guests = htmlspecialchars($_POST['guests']);
+    $intollerances = htmlspecialchars($_POST['intollerances']);
+
+    // Salva i dati in un file
+    $data = "Nome: $name, Numero di Partecipanti: $guests, Intolleranze: $intollerances\n";
+    file_put_contents("registrations.txt", $data, FILE_APPEND);
+
+    echo "<h1>Grazie per aver confermato la tua presenza!</h1>";
+    echo "<p>Nome: $name</p>";
+    echo "<p>Numero di Partecipanti: $guests</p>";
+    echo "<p>Intolleranze: $intollerances</p>";
+}
+?>
