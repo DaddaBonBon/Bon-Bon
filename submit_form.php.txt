@@ -1,0 +1,14 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $guests = htmlspecialchars($_POST['guests']);
+    $intollerances = htmlspecialchars($_POST['intollerances']);
+    $notes = htmlspecialchars($_POST['notes']);
+
+    echo "<h1>Conferma Ricevuta!</h1>";
+    echo "<p><strong>Nome:</strong> $name</p>";
+    echo "<p><strong>Numero di Partecipanti:</strong> $guests</p>";
+    echo "<p><strong>Intolleranze Alimentari:</strong> $intollerances</p>";
+    echo "<p><strong>Note Aggiuntive:</strong> $notes</p>";
+}
+?>
