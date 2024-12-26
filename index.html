@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonBon Wedding's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/mare.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav button {
+            background: #6a1b9a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        nav button:hover {
+            background: #53167b;
+        }
+
+        .section {
+            display: none;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #6a1b9a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #53167b;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BonBon Wedding's</h1>
+        <nav>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('story')">La nostra storia</button>
+            <button onclick="showSection('rsvp')">Conferma Presenza</button>
+        </nav>
+    </header>
+
+    <section id="home" class="section active">
+        <h2><strong>Ci sposiamo!</strong></h2>
+        <p><strong>Data:</strong> 24 Luglio 2025</p>
+        <p><strong>Chiesa:</strong> CHIESA SAN NICOLA, Brucoli - ore 16:30</p>
+        <p><strong>Location:</strong> Villa Infinito Mare, Augusta</p>
+    </section>
+
+    <section id="story" class="section">
+        <h2>La nostra storia</h2>
+        <p>Una storia di amore e avventure che ci ha portati a questo giorno speciale. Non vediamo l'ora di celebrarlo con voi!</p>
+    </section>
+
+    <section id="rsvp" class="section">
+        <h2>Conferma Presenza</h2>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Nome e Cognome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="guests">Numero di Partecipanti:</label>
+            <input type="number" id="guests" name="guests" min="1" required>
+
+            <label for="intollerances">Intolleranze Alimentari:</label>
+            <input type="text" id="intollerances" name="intollerances">
+
+            <button type="submit">Invia Conferma</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Grazie per essere parte del nostro giorno speciale! © 2025 BonBon Wedding's</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
