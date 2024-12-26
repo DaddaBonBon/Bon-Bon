@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonBon Wedding's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfdfd;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: #f4e4e4;
+            padding: 50px 20px;
+            color: #6a1b9a;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .info {
+            background: #fff8e1;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #6a1b9a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #53167b;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background: #6a1b9a;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BonBon Wedding's</h1>
+        <p>Un giorno speciale da celebrare insieme</p>
+    </header>
+
+    <section>
+        <div class="info">
+            <h2>Dettagli del Matrimonio</h2>
+            <p><strong>Data:</strong> 24 Luglio 2025</p>
+            <p><strong>Location:</strong> Villa Infinito Mare</p>
+            <img src="villa-infinito-mare.jpg" alt="Villa Infinito Mare">
+        </div>
+
+        <div class="info">
+            <h2>Conferma la tua Presenza</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Nome e Cognome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="guests">Numero di Partecipanti:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+
+                <label for="intollerances">Intolleranze Alimentari:</label>
+                <input type="text" id="intollerances" name="intollerances">
+
+                <label for="notes">Note Aggiuntive:</label>
+                <textarea id="notes" name="notes"></textarea>
+
+                <button type="submit">Conferma Presenza</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Grazie per essere parte del nostro giorno speciale! © 2025 BonBon Wedding's</p>
+    </footer>
+</body>
+</html>
